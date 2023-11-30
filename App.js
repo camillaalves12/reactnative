@@ -1,17 +1,61 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+
+import React from 'react';
+import { StyleSheet, Text, View,TextInput, TouchableOpacity } from 'react-native';
+
+
+const styleInput = () =>  {
+  return{
+      outlineStyle: 'none'
+
+    }
+}
+
+const Login = () => {
+  return(
+    <View style={[styles.div, { height: '100vh' }]}>
+    <Text style={styles.title}>Patrimônio Master</Text>
+
+    <View style={styles.divInputs}>
+      <View style={styles.inputs}>
+        <Text style={styles.textInput}>Login:</Text>
+        <TextInput style={[styles.input, styleInput()]}/>
+      </View>
+      <View style={styles.inputs}>
+        <Text style={styles.textInput}>Senha:</Text>
+        <TextInput style={[styles.input, styleInput()]}/>
+      </View>
+        <TouchableOpacity style={styles.button} activeOpacity={0.7}  >
+          <Text style={styles.textButton}>Entrar</Text>
+        </TouchableOpacity>
+        <Text style={{textAlign:'center', color:'#385898' }}>Esqueceu a senha?</Text>
+    </View>
+  </View>
+  )
+}
+
+const Password = () => {
+  return(
+    <View style={[styles.div, { height: '100vh' }]}>
+    <Text style={styles.title}>Patrimônio Master</Text>
+
+    <View style={styles.divInputs}>
+      <View style={styles.inputs}>
+        <Text style={styles.textInput}>Login:</Text>
+        <TextInput style={[styles.input, styleInput()]}/>
+      </View>
+        <Text style={{textAlign:'center', color:'#385898' }}>Esqueceu a senha?</Text>
+    </View>
+  </View>
+  )
+}
+
+
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style={styles.div}>
-        <Text style={{fontSize:'2rem'}}>UFAL </Text>
-        <StatusBar style="auto" />
-
-          <Text style={styles.text}>SISTEMAS DE INFORMAÇÃO</Text>
-          <Text style={styles.text}>DISPOSITIVOS MÓVEIS</Text>
-          <Text style={styles.text}>7° PERÍODO</Text>
-      </View>
+      <Login />
+      <Password/>
     </View>
 
     
@@ -21,24 +65,46 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1E90FF',
+    justifyContent: 'center', // Centraliza verticalmente
     alignItems: 'center',
-    justifyContent: 'center',
-    fontSize: '2rem',
-    
   },
   div: {
-    borderWidth: '0.1rem',
-    padding: '1rem',
-    borderRadius: '2rem',
-    alignItems: 'flex-start',
-    display: 'flex',
-    flexDirection: 'row'
+    justifyContent: 'center', // Centraliza verticalmente
+    alignItems: 'center',
   },
-
-  text: {
-    color: '#1C1C1C',
+  title: {
+    textAlign: 'center',
+    fontSize: '2rem',
+    bottom: '5rem'
+  },
+  divInputs: {
+    display: 'flex',
+    gap: '1.2rem'
+  },
+  inputs: {
+    display:'flex',
+    gap: '0.5rem',
+    width: '17rem'
+  },
+  input: {
+    border: '1px solid #000',
+    height: '2.5rem',
+    borderRadius: '0.5rem',
     fontSize: '1.2rem',
-    padding: '0.5rem'
+  },
+  textInput: {
+    fontSize: '1.2rem'
+  },
+  button: {
+    backgroundColor: '#1877F2',
+    alignItems: 'center',
+    padding: '0.5rem',
+    borderRadius: '0.5rem',
+    color: '#fff',
+  },
+  textButton: {
+    color: '#fff',
+    fontSize: '1.2rem',
+    fontWeight: 'bold'
   }
 });
