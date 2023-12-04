@@ -20,7 +20,7 @@ const Login = () => {
         <Text style={styles.textInput}>Login:</Text>
         <TextInput style={[styles.input, styleInput()]}/>
       </View>
-      <View style={styles.inputs}>
+      <View style={styles.inputs}> 
         <Text style={styles.textInput}>Senha:</Text>
         <TextInput style={[styles.input, styleInput()]}/>
       </View>
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     fontSize: '1.2rem',
   },
   textInput: {
-    fontSize: '1.2rem'
+    fontSize: 20
   },
   button: {
     backgroundColor: '#1877F2',
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
   },
   textButton: {
     color: '#fff',
-    fontSize: '1.2rem',
+    fontSize: 20,
     fontWeight: 'bold'
   }
 });
